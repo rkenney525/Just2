@@ -1,2 +1,2 @@
 # TwoDigitsSolver
-Solution tool for the Steam/mobile game Two Digits.
+Solution tool for the Steam/mobile game Two Digits by Cleverweek.

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Just 2 - Two Digits Solutioning</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/lib/jquery/jquery.js"></script>
+        <script src="js/app.js"></script>
+        <style>
+            .red {
+                color: red;
+            }
+            .green {
+                color: green;
+            }
+            .number {
+                width: 70px;
+                height: 50px;
+                font-size: 24pt;
+            }
+            .floating-box {
+                float: left;
+                width: 45%;
+                height: 100%;
+                border: solid 1px black;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Diddie Solutions</h1>
+        <div class="floating-box">
+            <h2>Input</h2>
+            <table>
+                <tr>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                </tr>
+            </table>
+            <button id="execute" type="submit">EXECUTE</button>
+            <button id="clear" type="submit">CLEAR</button>
+        </div>
+        <div class="floating-box">
+            <h2>Output</h2>
+            <h3>Status: <span id="status">Ready</span></h3>
+            <p class="red">Reds: [<span id="reds"></span>]</p>
+            <p class="green">Greens: [<span id="greens"></span>]</p>
+        </div>
+    </body>
+</html>
