@@ -295,18 +295,54 @@ QUnit.test("Pass in empty arrays", function (assert) {
 QUnit.test("Pass in populated same-size arrays", function (assert) {
     // Init
     var input = {
-        reds: [1,2,3],
-        greens: [4,5,6]
+        a1: [1,2,3],
+        a2: [4,5,6]
     };
     var reds, greens;
     
     // Set up
     TestUtil.appendResultsBlocks();
-    updateResults(input.reds, input.greens);
+    updateResults(input.a1, input.a2);
     
     // Check the value
     reds = $('#reds').text();
     greens = $('#greens').text();
     assert.strictEqual(reds, "1,2,3", "The reds value should be 1,2,3.");
     assert.strictEqual(greens, "4,5,6", "The greens value should be 4,5,6.");
+});
+QUnit.test("Pass in small array first", function (assert) {
+    // Init
+    var input = {
+        a1: [1],
+        a2: [4,5,6,2]
+    };
+    var reds, greens;
+    
+    // Set up
+    TestUtil.appendResultsBlocks();
+    updateResults(input.a1, input.a2);
+    
+    // Check the value
+    reds = $('#reds').text();
+    greens = $('#greens').text();
+    assert.strictEqual(reds, "1", "The reds value should be 1.");
+    assert.strictEqual(greens, "4,5,6,2", "The greens value should be 4,5,6,2.");
+});
+QUnit.test("Pass in small array second", function (assert) {
+    // Init
+    var input = {
+        a1: [8,3,9,16],
+        a2: [2]
+    };
+    var reds, greens;
+    
+    // Set up
+    TestUtil.appendResultsBlocks();
+    updateResults(input.a1, input.a2);
+    
+    // Check the value
+    reds = $('#reds').text();
+    greens = $('#greens').text();
+    assert.strictEqual(reds, "2", "The reds value should be 2.");
+    assert.strictEqual(greens, "8,3,9,16", "The greens value should be 8,3,9,16.");
 });
