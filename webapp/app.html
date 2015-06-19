@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Two Digits Solution</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/lib/jquery/jquery.js"></script>
+        <script src="js/app.js"></script>
+        <style>
+            body {
+                background-color: #FF7777;
+            }
+            .red {
+                color: red;
+            }
+            .green {
+                color: green;
+            }
+            .number {
+                width: 70px;
+                height: 50px;
+                font-size: 24pt;
+                background-color: #FFEEEE;
+                border-radius: 10px;
+            }
+            .floating-box {
+                box-shadow: 10px 10px 5px #AA0101;
+                background-color: #FFCCCC;
+                text-align: center;
+                width: 300px;
+                height: 300px;
+                float: left;
+                border: solid 2px #660000;
+                padding: 10px;
+                border-radius: 15px;
+            }
+            .floating-box:first-of-type {
+                margin-right: 25px;
+            }
+            .block-center {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            button {
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="floating-box">
+            <h2>Input</h2>
+            <table class="block-center">
+                <tr>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                    <td><input type="text" class="number" /></td>
+                </tr>
+            </table>
+            <button id="execute" type="submit">EXECUTE</button>
+            <button id="clear" type="submit">CLEAR</button>
+        </div>
+        <div class="floating-box">
+            <h2>Output</h2>
+            <h3>Status: <span id="status">Ready</span></h3>
+            <p class="red">Reds: [<span id="reds"></span>]</p>
+            <p class="green">Greens: [<span id="greens"></span>]</p>
+        </div>
+    </body>
+</html>
