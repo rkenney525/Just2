@@ -85,7 +85,7 @@ function updateStatus(status) {
 function updateResults(a1, a2) {
     // Init
     var reds, greens;
-    
+
     // Determine the shorter array and make it red
     if (a1.length > a2.length) {
         reds = a2;
@@ -94,10 +94,34 @@ function updateResults(a1, a2) {
         reds = a1;
         greens = a2;
     }
-    
+
     // Display the results
     $('#reds').text(reds);
     $('#greens').text(greens);
+    updateInputFields(reds, greens);
+}
+
+function updateInputFields(reds, greens) {
+    // init
+    var num, $num;
+    var numbers = $('.number');
+
+    // In case the clear button was not pressed, clear any classes
+    numbers.removeClass("glowing-red glowing-green");
+
+    // Apply classes as required
+    numbers.each(function () {
+        // Get the input field and its value
+        $num = $(this);
+        num = Number($num.val());
+
+        // Check if the value is in either solution set
+        if (reds.indexOf(num) !== -1) {
+            $num.addClass('glowing-red');
+        } else if (greens.indexOf(num) !== -1) {
+            $num.addClass('glowing-green');
+        }
+    });
 }
 
 $(document).ready(function () {
@@ -139,9 +163,11 @@ $(document).ready(function () {
      * areas.
      */
     $('#clear').bind('click', function () {
-        $(".number").each(function () {
+        var numbers = $(".number");
+        numbers.each(function () {
             $(this).val("");
         });
+        numbers.removeClass("glowing-red glowing-green");
         $('#reds').empty();
         $('#greens').empty();
     });
